@@ -40,6 +40,12 @@
     <Filter Include="소스 파일\백준\Bellman_Ford">
       <UniqueIdentifier>{916dbc15-deaa-4cdf-9145-e8dc1fe8d4be}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\백준\Kmp">
+      <UniqueIdentifier>{8649e801-1288-4a2f-a688-257a87989f57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\백준\String">
+      <UniqueIdentifier>{71ddbdc0-93c4-49c9-8ef7-2e8ce3a4982b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1753.cpp">
@@ -170,6 +176,15 @@
     </ClCompile>
     <ClCompile Include="14501.cpp">
       <Filter>소스 파일\백준\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="1786.cpp">
+      <Filter>소스 파일\백준\Kmp</Filter>
+    </ClCompile>
+    <ClCompile Include="1316.cpp">
+      <Filter>소스 파일\백준\String</Filter>
+    </ClCompile>
+    <ClCompile Include="11656.cpp">
+      <Filter>소스 파일\백준\String</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
