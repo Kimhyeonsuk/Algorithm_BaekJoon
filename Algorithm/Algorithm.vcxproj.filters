@@ -46,6 +46,15 @@
     <Filter Include="소스 파일\백준\String">
       <UniqueIdentifier>{71ddbdc0-93c4-49c9-8ef7-2e8ce3a4982b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\백준\Greedy">
+      <UniqueIdentifier>{ea3a5021-391a-43ea-958a-e930de287462}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\백준\BackTracking">
+      <UniqueIdentifier>{1cf7164e-a675-498a-8c30-ed0980fb5ae7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\백준\binarySearch">
+      <UniqueIdentifier>{0fe10612-6568-4ace-a48d-b26955d196c2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1753.cpp">
@@ -185,6 +194,18 @@
     </ClCompile>
     <ClCompile Include="11656.cpp">
       <Filter>소스 파일\백준\String</Filter>
+    </ClCompile>
+    <ClCompile Include="1946.cpp">
+      <Filter>소스 파일\백준\Greedy</Filter>
+    </ClCompile>
+    <ClCompile Include="15649.cpp">
+      <Filter>소스 파일\백준\BackTracking</Filter>
+    </ClCompile>
+    <ClCompile Include="9663.cpp">
+      <Filter>소스 파일\백준\BackTracking</Filter>
+    </ClCompile>
+    <ClCompile Include="1920.cpp">
+      <Filter>소스 파일\백준\binarySearch</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
