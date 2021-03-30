@@ -55,6 +55,9 @@
     <Filter Include="소스 파일\백준\binarySearch">
       <UniqueIdentifier>{0fe10612-6568-4ace-a48d-b26955d196c2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\백준\DFS">
+      <UniqueIdentifier>{0b308ece-34f4-40e6-82fe-7681bc800c4a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1753.cpp">
@@ -156,9 +159,6 @@
     <ClCompile Include="7453.cpp">
       <Filter>소스 파일\백준\Hashing</Filter>
     </ClCompile>
-    <ClCompile Include="1987.cpp">
-      <Filter>소스 파일\백준\BFS</Filter>
-    </ClCompile>
     <ClCompile Include="11053.cpp">
       <Filter>소스 파일\백준\DP</Filter>
     </ClCompile>
@@ -206,6 +206,18 @@
     </ClCompile>
     <ClCompile Include="1920.cpp">
       <Filter>소스 파일\백준\binarySearch</Filter>
+    </ClCompile>
+    <ClCompile Include="1987.cpp">
+      <Filter>소스 파일\백준\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="9012.cpp">
+      <Filter>소스 파일\백준\String</Filter>
+    </ClCompile>
+    <ClCompile Include="1427.cpp">
+      <Filter>소스 파일\백준\String</Filter>
+    </ClCompile>
+    <ClCompile Include="1181.cpp">
+      <Filter>소스 파일\백준\String</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

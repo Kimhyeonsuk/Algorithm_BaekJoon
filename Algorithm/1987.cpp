@@ -1,58 +1,46 @@
 #include <iostream>
-#include <queue>
+#include <vector>
 #include <algorithm>
 using namespace std;
-int R, C;
-char map[21][21];
-bool chk[21][21];
 int dx[4] = { -1,1,0,0 };
-int dy[4]={ 0,0,-1,1 };
-struct horse {
-	int x;
-	int y;
-	int cnt;
-	bool *alpha;
-};
-queue<horse>q;
-int res;
-void bfs() {
-	while (!q.empty()) {
-		int tx = q.front().x;
-		int ty = q.front().y;
-		int cnt = q.front().cnt;
-		bool* talpah = q.front().alpha;
+int dy[4] = { 0,0,-1,1 };
+vector<bool>checkAlp(28, false);
+int R, C;
+int res = 0;
+void dfs(int x,int y,vector<vector<char>>& map,vector<vector<bool>>&visit,int cnt) {
+	for (int i = 0; i < 4; i++) {
+		int nx = x + dx[i];
+		int ny = y + dy[i];
+		if (nx < 0 || ny < 0 || nx >= R || ny >= C)continue;
+		if (visit[nx][ny])continue;
+		if (checkAlp[map[nx][ny] - 'A'])continue;
 
-		q.pop();
-		for (int i = 0; i < 4; i++) {
-			int nx = tx + dx[i];
-			int ny = ty + dy[i];
-			if (nx < 0 || ny < 0 || nx >= R || ny >= C)continue;
-			if (chk[nx][ny])continue;
-			if (talpah[map[nx][ny] - 'A'])continue;
-			chk[nx][ny] = true;
-			talpah[map[nx][ny] - 'A'] = true;
-
-			bool tmparr[28];
-			res = max(res, cnt + 1);
-			for (int i = 0; i < 28; i++)
-				tmparr[i] = talpah[i];
-			q.push({ nx,ny,cnt+1,tmparr });
-		}
+		checkAlp[map[nx][ny] - 'A'] = true;
+		visit[nx][ny] = true;
+		res = max(res, cnt + 1);
+		dfs(nx, ny, map, visit,cnt+1);
+		visit[nx][ny] = false;
+		checkAlp[map[nx][ny] - 'A'] = false;
 	}
 }
 int main() {
 	cin.tie(NULL);
 	std::ios::sync_with_stdio(false);
-	res = 0;
 	cin >> R >> C;
+	vector<vector<char>>map(R, vector<char>(C, 'A'));
+	vector<vector<bool>>visit(R, vector<bool>(C, false));
 	for (int i = 0; i < R; i++) {
-		cin >> map[i];
+		string s;
+		cin >> s;
+		for (int j = 0; j < s.size(); j++) {
+			map[i][j] = s[j];
+		}
 	}
-
-	bool al[28] = { false, };
-	al[map[0][0] - 'A'] = true;
-	q.push({ 0, 0, 1, al });
-	bfs();
+	res = 1;
+	visit[0][0] = true;
+	checkAlp[map[0][0]-'A'] = true;
+	dfs(0, 0,map,visit,1);
+	
 	cout << res << "\n";
-	return 0; 
+	return 0;
 }
