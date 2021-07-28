@@ -58,6 +58,12 @@
     <Filter Include="소스 파일\백준\DFS">
       <UniqueIdentifier>{0b308ece-34f4-40e6-82fe-7681bc800c4a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\백준\삼성SW기출">
+      <UniqueIdentifier>{b8c57223-799a-44ec-85ad-97a4993633ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\SWEA">
+      <UniqueIdentifier>{ca4d8206-17f8-448a-9aa3-5926e62b381b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1753.cpp">
@@ -218,6 +224,21 @@
     </ClCompile>
     <ClCompile Include="1181.cpp">
       <Filter>소스 파일\백준\String</Filter>
+    </ClCompile>
+    <ClCompile Include="20055.cpp">
+      <Filter>소스 파일\백준\삼성SW기출</Filter>
+    </ClCompile>
+    <ClCompile Include="3190.cpp">
+      <Filter>소스 파일\백준\삼성SW기출</Filter>
+    </ClCompile>
+    <ClCompile Include="14888.cpp">
+      <Filter>소스 파일\백준\삼성SW기출</Filter>
+    </ClCompile>
+    <ClCompile Include="1946_2.cpp">
+      <Filter>소스 파일\백준\삼성SW기출</Filter>
+    </ClCompile>
+    <ClCompile Include="2531.cpp">
+      <Filter>소스 파일\백준\삼성SW기출</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
