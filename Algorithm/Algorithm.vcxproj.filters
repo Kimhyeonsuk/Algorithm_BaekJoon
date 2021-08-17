@@ -64,6 +64,9 @@
     <Filter Include="소스 파일\SWEA">
       <UniqueIdentifier>{ca4d8206-17f8-448a-9aa3-5926e62b381b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\백준\Combinations">
+      <UniqueIdentifier>{834f3371-e118-4f75-81bf-141ab147b9d0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1753.cpp">
@@ -239,6 +242,15 @@
     </ClCompile>
     <ClCompile Include="2531.cpp">
       <Filter>소스 파일\백준\삼성SW기출</Filter>
+    </ClCompile>
+    <ClCompile Include="2343.cpp">
+      <Filter>소스 파일\백준\삼성SW기출</Filter>
+    </ClCompile>
+    <ClCompile Include="13424.cpp">
+      <Filter>소스 파일\백준\삼성SW기출</Filter>
+    </ClCompile>
+    <ClCompile Include="1256.cpp">
+      <Filter>소스 파일\백준\Combinations</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

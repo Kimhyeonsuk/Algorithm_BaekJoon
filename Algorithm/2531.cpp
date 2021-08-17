@@ -3,9 +3,36 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-int n, d, k, c;
-map<int, int>tmpmap;
+int n, d, k, c, res;
+map<int, int>sushiList;
 vector<int>sushi;
+void chkeckSushiList() {//쿠폰과 맵의 정보를 확인하여 값 도출
+	int tmpsize = sushiList.size();
+	if (sushiList.find(c) != sushiList.end()) {
+		res = max(res,tmpsize);
+	}
+	else
+		res = max(res, tmpsize + 1);
+}
+void eraseSushi(int idx) {//윈도우를 이동시킴에따라 이전의 초밥의 정보를 맵에서 갱신
+	if (sushiList[sushi[idx - 1]] == 1) {
+		sushiList.erase(sushi[idx - 1]);
+	}
+	else {
+		sushiList[sushi[idx - 1]] -= 1;
+	}
+}
+void addSushi(int idx) {
+	if (idx > sushi.size()) {//이동시킨 윈도우의 마지막 인덱스가 배열의 사이즈를 벗어나 0번 인덱스부터 다시 포함시켜야 하는 경우
+		idx = ((idx) % sushi.size()) ;//돌았을때 인덱스 찾기
+	}
+	if (sushiList.find(sushi[idx - 1]) != sushiList.end()) {
+		sushiList[sushi[idx - 1]] += 1;
+	}
+	else {
+		sushiList.insert({ sushi[idx - 1], 1 });
+	}
+}
 int main() {
 	cin.tie(NULL);
 	std::ios::sync_with_stdio(false);
@@ -14,55 +41,24 @@ int main() {
 		int x;
 		cin >> x;
 		sushi.push_back(x);
-		if (i < k) {
-			if (tmpmap.find(x) != tmpmap.end()) {
-				tmpmap[x] += 1;
+		if (i < k) {//인덱스 0을 기준으로 k개의 초밥 맵에 저장
+			if (sushiList.find(x) != sushiList.end()) {
+				sushiList[x] += 1;
 			}
 			else {
-				tmpmap.insert({ x,1 });
+				sushiList.insert({ x,1 });
 			}
 		}
 		
 	}
-
-	int res;
-	if (tmpmap.find(c) != tmpmap.end()) {
-		res = tmpmap.size();
-	}
-	else
-		res = tmpmap.size() + 1;
-	for (int i = 1; i < sushi.size(); i++)
+	res = 0;
+	chkeckSushiList();
+	for (int i = 1; i < sushi.size(); i++)//한칸씩 윈도우를 이동하는 동시에 k크기를 유지시키며 맵을 갱신
 	{
-		if (tmpmap[sushi[i - 1]] == 1) {
-			tmpmap.erase(sushi[i - 1]);
-		}
-		else {
-			tmpmap[sushi[i - 1]] -= 1;
-		}
-
-		if (i + k > sushi.size()) {
-			int next = ((i + k) % sushi.size()) - 1;
-			if (tmpmap.find(sushi[next]) != tmpmap.end()) {
-				tmpmap[sushi[next]] += 1;
-			}
-			else {
-				tmpmap.insert({ sushi[next], 1 });
-			}
-		}
-		else {
-			if (tmpmap.find(sushi[i + k - 1]) != tmpmap.end()) {
-				tmpmap[sushi[i + k - 1]] += 1;
-			}
-			else {
-				tmpmap.insert({ sushi[i + k - 1], 1 });
-			}
-		}
-		int tmps = tmpmap.size();
-		if (tmpmap.find(c) != tmpmap.end()) {
-			res = max(res, tmps);
-		}
-		else
-			res =max(res, tmps+1);
+		eraseSushi(i);
+		int next = i + k;
+		addSushi(next);
+		chkeckSushiList();
 	}
 	cout << res << "\n";
 	return 0;
