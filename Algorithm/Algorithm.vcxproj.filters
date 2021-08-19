@@ -252,5 +252,8 @@
     <ClCompile Include="1256.cpp">
       <Filter>소스 파일\백준\Combinations</Filter>
     </ClCompile>
+    <ClCompile Include="1194.cpp">
+      <Filter>소스 파일\백준\BFS</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
